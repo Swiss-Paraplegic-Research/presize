@@ -22,8 +22,8 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 # copy necessary files
 # start in at level above package
 ## app folder
-COPY presize/inst/shinyApp ./app
-COPY presize ./presize
+COPY inst/shinyApp ./app
+#COPY presize ./presize
 
 # install deps
 RUN Rscript -e 'install.packages("remotes");remotes::install_deps("presize", dependencies = TRUE);remotes::install_local("presize")'
